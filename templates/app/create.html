@@ -1,0 +1,15 @@
+<h4>Create new question</h4>
+
+{% if error_message %}<:p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="/create/" method="post">
+{% csrf_token %}
+    <p>Title <input type="text" name="title"/></p>
+    <p>Question </p>
+    <textarea name="content" ROWS=5 COLS=40></textarea>
+    <p>Tags <input type="text" name="tags"/></p>
+    <p>Author <input type="text" name="author_name"/></p>
+    <p>Email <input type="text" name="author_email"/></p>
+<input type="submit" value="Add" />
+<a href="/"> Cancel </a>
+</form>

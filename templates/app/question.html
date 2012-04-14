@@ -1,0 +1,24 @@
+<h3> Question: {{ question.title }} </h3>
+<p>  {{ question.content }}  </p>
+<p> author: {{ question.author.name }} ({{ question.author.email}}) </p>
+
+{% if question.answers %}
+    <ul>
+    {% for ans in question.answers %}
+        <hr/>
+        <p> author: {{ ans.author.name }} ({{ ans.author.email }})</p>
+        <p>{{ ans.content }}</p>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No answers yet.</p>
+{% endif %}
+
+<h4> Add answer </h4>
+<form action="/answer/{{ question.id }}" method="post">
+{% csrf_token %}
+    <textarea name="answer_content" ROWS=2 COLS=40></textarea>
+    <p>Author <input type="text" name="author_name"/> Email <input type="text" name="author_email"/></p>
+<input type="submit" value="Add comment" />
+<a href="/"> Cancel </a>
+</form>

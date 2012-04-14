@@ -21,6 +21,8 @@ urlpatterns = patterns('',
 
     # Quad urls
     url(r'^$', 'app.views.home'),
-    url(r'^app/(?P<user_id>\w+)/$', 'app.views.detail'),
-    url(r'^app/(?P<user_id>\w+)/edit/$', 'app.views.edit'),
+    url(r'^new/$', 'app.views.new'),
+    url(r'^create/$', 'app.views.create'),
+    url(r'^(?P<question_id>\w+)/$', 'app.views.question'),
+    url(r'^answer/(?P<question_id>\w+)$', 'app.views.answer'),
 )
