@@ -1,8 +1,4 @@
 from django.conf.urls import patterns, include, url
-from mongoengine import connect
-
-# Start connection to mongo database
-connect("quad_db")
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
