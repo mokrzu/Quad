@@ -44,3 +44,14 @@ def create(request):
     q.tags = request.POST["tags"].split()
     q.save()
     return HttpResponseRedirect('/')
+
+def confirm(request, question_id):
+    question = Question.objects(id=question_id)[0]
+    l = loader.get_template('app/delete.html')
+    c = Context({'question': question})
+    return HttpResponse(l.render(c)) 
+
+def delete(request, question_id):
+    q = Question.objects(id=question_id)[0]
+    q.delete()
+    return HttpResponseRedirect('/')

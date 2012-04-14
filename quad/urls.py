@@ -25,4 +25,6 @@ urlpatterns = patterns('',
     url(r'^create/$', 'app.views.create'),
     url(r'^(?P<question_id>\w+)/$', 'app.views.question'),
     url(r'^answer/(?P<question_id>\w+)$', 'app.views.answer'),
-)
+    url(r'^confirm/(?P<question_id>\w+)$', 'app.views.confirm'),
+    url(r'^delete/(?P<question_id>\w+)$', 'app.views.delete'),
+) 

@@ -1,12 +1,12 @@
-<h2> QUAD! </h2>
+<h2 style="color:red"> QUAD! </h2>
 <h4><a href="/new/"> New question? </a></h4>
 {% if questions_list %}
     <ul>
     {% for question in questions_list %}
-        <li><a href="/{{ question.id }}/">{{ question.title }}</a></li>
+        <li><a href="/{{ question.id }}/">{{ question.title }}</a> [{% for t in question.tags %} {{t}} {% endfor %}]</li>
     {% endfor %}
     </ul>
 {% else %}
     <p>No questions yet.</p>
 {% endif %}
-
+<hr/>

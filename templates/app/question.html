@@ -19,6 +19,6 @@
 {% csrf_token %}
     <textarea name="answer_content" ROWS=2 COLS=40></textarea>
     <p>Author <input type="text" name="author_name"/> Email <input type="text" name="author_email"/></p>
-<input type="submit" value="Add comment" />
-<a href="/"> Cancel </a>
+<input type="submit" value="Add answer" />
+<a href="/"> Cancel </a><p>     </p><a href="/confirm/{{ question.id }}"> Delete </a>
 </form>
