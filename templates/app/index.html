@@ -1,0 +1,12 @@
+<h2> QUAD! </h2>
+<hr/>
+{% if questions_list %}
+    <ul>
+    {% for question in questions_list %}
+        <li><a href="/{{ question.id }}/">{{ question.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No questions yet.</p>
+{% endif %}
+

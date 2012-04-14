@@ -9,7 +9,7 @@ def home(request):
     questions_list = Question.objects.all()
     l = loader.get_template('app/index.html')
     c = Context({'questions_list': questions_list})
-    return Http(l.render(c))
+    return HttpResponse(l.render(c))
 
 def question(request, question_id):
     arguments = {'question': Question.objects(id=question_id)[0]}
@@ -17,7 +17,7 @@ def question(request, question_id):
 
 def answer(request, question_id):
     q = Question.objects(id=question_id)[0]
-    q.answers.appent(request.POST["answer_content"])
+    q.answers.appent(Answer(request.POST["answer_content"], request.POST["author_name"], request.POST["author_email"]))
     q.save()
     return HttpResponseRedirect('/' + str(question_id))
 
@@ -25,6 +25,11 @@ def new(request):
     return render_to_response('app/create.html', {}, context_instance=RequestContext(request))
 
 def create(request):
-    q = Question(request.POST["title"], request.POST["author_name"], request.POST["author_email"], request.POST["tags"])
+    q = Question(
+        request.POST["title"],
+        request.POST["content"],
+        request.POST["author_name"],
+        request.POST["author_email"], 
+        request.POST["tags"])
     q.save()
     return HttpResponseRedirect('/' + str(q.id))

@@ -18,4 +18,9 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
+
+    # Quad urls
+    url(r'^$', 'app.views.home'),
+    url(r'^app/(?P<user_id>\w+)/$', 'app.views.detail'),
+    url(r'^app/(?P<user_id>\w+)/edit/$', 'app.views.edit'),
 )
