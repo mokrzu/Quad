@@ -17,7 +17,10 @@ def question(request, question_id):
 
 def answer(request, question_id):
     q = Question.objects(id=question_id)[0]
-    q.answers.appent(Answer(request.POST["answer_content"], request.POST["author_name"], request.POST["author_email"]))
+    a = Answer()
+    a.author = Author(name = request.POST["author_name"], email=request.POST["author_email"])
+    a.content = request.POST["answer_content"]
+    q.answers.appent(a)
     q.save()
     return HttpResponseRedirect('/' + str(question_id))
 
@@ -25,11 +28,10 @@ def new(request):
     return render_to_response('app/create.html', {}, context_instance=RequestContext(request))
 
 def create(request):
-    q = Question(
-        request.POST["title"],
-        request.POST["content"],
-        request.POST["author_name"],
-        request.POST["author_email"], 
-        request.POST["tags"])
+    q = Question()
+    q.title = request.POST["title"]
+    q.content = request.POST["content"]
+    q.author = Author(name=request.POST["author_name"], email=request.POST["author_email"]) 
+    q.tags = request.POST["tags"]
     q.save()
     return HttpResponseRedirect('/' + str(q.id))
