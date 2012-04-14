@@ -27,6 +27,7 @@ Setup how-to:
 Now open browser at: http://127.0.0.1:8000/ 
 - - -
 Example interaction with database (from python shell in project dir):
+
 ```python
 # connect to mongo database
 '''
