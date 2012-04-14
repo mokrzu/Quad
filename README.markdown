@@ -28,13 +28,12 @@ Now open browser at: http://127.0.0.1:8000/
 - - -
 Example interaction with database (from python shell in project dir):
 
+If you don't know database name, simply use mongo shell (`mongo` command),
+use `show dbs` to print all databases names, from here you could also test application
+for example: use `use quad_db` and next `db.author.find()` to print all Authors documents.
+    
 ```python
 # connect to mongo database
-'''
-    if you don't know database name, simply use mongo shell ("mongo" command),
-    use "show dbs" to print all databases names, from here you could also test application
-    for example: use "use quad_db" and next "db.author.find()" to print all Authors documents.
-'''
 >>> from mongoengine import *
 >>> connect('quad_db')
 Database(Connection('localhost', 27017), u'quad_db')
