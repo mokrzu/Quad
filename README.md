@@ -7,9 +7,10 @@ Q & A example Django web application, that uses Mongo database.
 > not it the models.py, connection to database starts also in init (quad directory).
 
 Dependencies:
-- working mongo instance (install mongodb and run mongod proccess)
-- mongoengine
-- django (i used django 1.4 version)
+
+-   working mongo instance (install mongodb and run mongod proccess)
+-   mongoengine
+-   django (i used django 1.4 version)
 
 Setup how-to:
     
