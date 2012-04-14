@@ -2,14 +2,14 @@
 - - - 
 Q & A example Django web application, that uses Mongo database.
 
-> I used mongoengine to connect with mongo database, to achive that
+> I used mongoengine in order to connect with mongo database, to achive that
 > documents models should be placed in init file (application directory)
-> not it the models.py, connection to database starts also in init (quad direvtory)
+> not it the models.py, connection to database starts also in init (quad directory).
 
 Dependencies:
-+ working mongo instance (install mongodb and run mongod proccess)
-+ mongoengine
-+ django (i used django 1.4 version)
+- working mongo instance (install mongodb and run mongod proccess)
+- mongoengine
+- django (i used django 1.4 version)
 
 Setup how-to:
     
