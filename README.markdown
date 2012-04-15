@@ -1,11 +1,11 @@
 ##Quad (author: Lukasz Mokrzycki)
-'Qestions & Answers' example Django web application, that uses Mongo database.
+####'Qestions & Answers' example Django web application, that uses Mongo database.
 
-> I used mongoengine in order to connect with mongo database, to achive that
-> documents models should be placed in init file (application directory)
-> not it the models.py, connection to database starts also in init (quad directory).
+I used **mongoengine** in order to connect with **mongo** database, to achive that
+documents models should be placed in *init* file (application directory)
+not it the **models.py**, connection to database starts also in **init** (quad directory).
 
-> It has also support for uploading and storing files in GridFS
+It has also provides uploading and storing files in **GridFS**.
 
 Dependencies:
 
