@@ -5,6 +5,8 @@
 > documents models should be placed in init file (application directory)
 > not it the models.py, connection to database starts also in init (quad directory).
 
+> It has also support for uploading and storing files in GridFS
+
 Dependencies:
 
 -   working mongo instance (install mongodb and run mongod proccess)

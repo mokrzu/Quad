@@ -24,3 +24,4 @@ class Question(Document):
     author = ReferenceField(Author)
     tags = ListField(StringField(max_length=20))
     answers = ListField(EmbeddedDocumentField(Answer))
+    attachment = FileField()

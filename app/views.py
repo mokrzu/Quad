@@ -4,6 +4,12 @@ from django.shortcuts import render_to_response
 # import application models
 # stored in __init__.py file
 from app import * 
+from app.forms import *
+
+# import for reading binary file
+from PIL import Image
+import StringIO
+from math import sqrt
 
 def home(request):
     questions_list = Question.objects.all()
@@ -14,7 +20,6 @@ def home(request):
 def question(request, question_id):
     arguments = {'question': Question.objects(id=question_id)[0]}
     print Question.objects(id=question_id)[0].author
-    print "<<<<<<<<<<<"
     return render_to_response('app/question.html', arguments, context_instance=RequestContext(request))
 
 def answer(request, question_id):
@@ -25,7 +30,6 @@ def answer(request, question_id):
     a.author = ar
     a.content = request.POST["answer_content"]
     q.answers.append(a)
-    print "<<<<<<<<<<<<9"
     print q.answers[0].content
     q.save()
     return HttpResponseRedirect('/' + str(question_id))
@@ -42,6 +46,7 @@ def create(request):
     a.save()
     q.author = a;
     q.tags = request.POST["tags"].split()
+    q.attachment.put(request.FILES["my_file"], content_type='text')
     q.save()
     return HttpResponseRedirect('/')
 
@@ -55,3 +60,6 @@ def delete(request, question_id):
     q = Question.objects(id=question_id)[0]
     q.delete()
     return HttpResponseRedirect('/')
+
+def show_file(request, question_id):
+    return HttpResponse(Question.objects(id=question_id)[0].attachment.read())
