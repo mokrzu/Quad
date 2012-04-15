@@ -8,11 +8,13 @@
 Dependencies:
 
 -   working mongo instance (install mongodb and run mongod proccess)
+-   pymongo
 -   mongoengine
 -   django (i used django 1.4 version)
 
 Setup how-to:
     
+    pip install pymongo
     pip install mongoengine
     pip install django
 
