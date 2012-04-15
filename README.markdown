@@ -2,10 +2,10 @@
 ####'Qestions & Answers' example Django web application, that uses Mongo database.
 
 I used **mongoengine** in order to connect with **mongo** database, to achive that
-documents models should be placed in *init* file (application directory)
+documents models should be placed in **init** file (application directory)
 not it the **models.py**, connection to database starts also in **init** (quad directory).
 
-It has also provides uploading and storing files in **GridFS**.
+It also provides uploading and storing files in **GridFS**.
 
 Dependencies:
 
