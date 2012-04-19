@@ -60,7 +60,6 @@ Awesome question?!
 >>> a.save()
 >>> q.content = "......."
 >>> q.tags = ["short", "examples"]
->>> q.save
 >>> q.save()
 >>> Question.objects(title="How to save that?")[0].content
 u'.......'
